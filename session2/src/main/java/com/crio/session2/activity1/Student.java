@@ -23,7 +23,7 @@ public class Student
         listOfStudent.add(new Student(2,"kamboj",20));  
         
 		// Sort list of student objects on basis of rollNo
-        
+        bubbleSort(listOfStudent);
         
 		// Print sorted result
         for(Student student:listOfStudent)
@@ -32,6 +32,34 @@ public class Student
             System.out.println("Age of Student = "+student.age);
             System.out.println("Name of Student = "+student.name);
         }
-    }  
+    }
+    
+    public static void bubbleSort(ArrayList<Student> students){
+        boolean atleastOneItemisSwapped = true;
+        while(atleastOneItemisSwapped){
+            atleastOneItemisSwapped=false;
+            //one pass
+            for(int i=0; i< students.size() -1 ;i++){
+                //*** comparing two elements
+                int comparedResult = students.get(i).compareRollNo(students.get(i+1));
+                if(comparedResult>0){
+                    //swapping logic
+                    Student temp = students.get(i);
+                    students.set(i,students.get(i+1));
+                    students.set(i+1,temp);
+                    atleastOneItemisSwapped = true;
+                }
+            }
+        }
+    }
+
+    private int compareRollNo(Student student) {
+        if(rollNo == student.rollNo)  
+            return 0;  
+        else if(rollNo > student.rollNo)  
+            return 1;  
+        else  
+            return -1;  
+    }
 }
 
