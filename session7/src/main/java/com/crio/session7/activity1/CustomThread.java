@@ -12,7 +12,7 @@ public class CustomThread implements Runnable {
         }
       
         System.out.println(
-          "State of thread1 while it called join() method on thread2 -" + ThreadLifeCycle.thread1.getState());
+          "State of " + ThreadLifeCycle.thread1.getName() + " while it called join() method on " + Thread.currentThread().getName() + "-" + ThreadLifeCycle.thread1.getState());
         try {
          Thread.sleep(200);
         } catch (InterruptedException e) {
