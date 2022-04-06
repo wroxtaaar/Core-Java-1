@@ -35,31 +35,11 @@ public class Student
     }
     
     public static void bubbleSort(ArrayList<Student> students){
-        boolean atleastOneItemisSwapped = true;
-        while(atleastOneItemisSwapped){
-            atleastOneItemisSwapped=false;
-            //one pass
-            for(int i=0; i< students.size() -1 ;i++){
-                //*** comparing two elements
-                int comparedResult = students.get(i).compareRollNo(students.get(i+1));
-                if(comparedResult>0){
-                    //swapping logic
-                    Student temp = students.get(i);
-                    students.set(i,students.get(i+1));
-                    students.set(i+1,temp);
-                    atleastOneItemisSwapped = true;
-                }
-            }
-        }
+       // Complete the function
     }
 
     private int compareRollNo(Student student) {
-        if(rollNo == student.rollNo)  
-            return 0;  
-        else if(rollNo > student.rollNo)  
-            return 1;  
-        else  
-            return -1;  
+        // Make use of it in bubbleSort as a comparing indicator
     }
 }
 
